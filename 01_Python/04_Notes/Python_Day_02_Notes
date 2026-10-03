@@ -1,0 +1,247 @@
+# Python Day 2 — Data Types, Numbers, Operations, Type Conversion, f-Strings 
+
+Date: 11 September 2026
+
+## 1. Data Types
+
+### String (str)
+- String of characters
+- Text written inside quotes.
+eg: name = "Agrata"
+
+- The method of pulling out a particular element from a string is called subscripting.
+eg: print("Hello"[0])
+
+- index starts from 0. Python also has negative indices. -1 refers to the last character in the string. 
+
+### Integer (int)
+
+- Whole numbers, i.e numberd without decimals.
+eg: age = 34
+- Number system also works in Python, but instead of commas we can use underscore. 
+eg: print(123_456_789) 
+this is 123,456,789 
+
+### Float (float)
+
+Numbers containing decimal values.
+eg: height = 5.4
+price = 4000.50
+
+### Boolean (bool)
+
+Has only two values:
+
+True
+False
+
+Example:
+
+is_learning = True
+
+## 2. Checking Data Type — type()
+
+Syntax: type(variable)
+
+eg: 
+print(type("Hello"))
+print(type(123))
+print(type(123.456))
+print(type(True))
+
+Output: 
+<class 'str'>
+<class 'int'>
+<class 'float'>
+<class 'bool'>
+
+## 3. Type Conversion / Type Casting
+
+- Changing one data type into another.
+
+### String → Integer
+
+print("123"+"456")
+print(int("123")+int("456"))
+
+Output: 
+123456
+579
+
+print(int("ABC"))
+- Value Error comes if we give invalid literal. In this case "ABC" cant be converted to int. 
+
+
+
+
+### String → Float
+
+price = "4000.50"
+price = float(price)
+
+### Integer → String
+
+print("No of letters in your name:" +len(input("Enter your name:")))
+
+- Type Error: can only concatenate str (not "int") to str. len() function gives int as output. type convert it to str for output. 
+
+print("No of letters in your name:" + str(len(input("Enter your name:"))))
+
+
+## 4. Important point about input()
+
+input() always returns a STRING.
+
+Example:
+
+age = input("What is your age?")
+
+Even if the user enters:
+
+34
+
+Python receives:
+
+"34"
+
+To convert it:
+
+age = int(input("What is your age?"))
+
+## 5. Mathematical Operations
+
+Addition:
++
+
+Subtraction:
+-
+
+Multiplication:
+*
+
+Division:
+/
+
+Floor Division:
+//
+
+Modulus / Remainder:
+%
+
+Exponent:
+**
+
+Examples:
+
+10 + 5
+10 - 5
+10 * 5
+10 / 5
+10 // 3
+10 % 3
+2 ** 3
+
+## 6. Order of Operations - PEMDAS Parenthesis, Exponents, Multiplication, Division, Addition
+
+Python follows mathematical order of operations.
+
+eg:
+result = 3 + 5 * 2
+
+Multiplication happens before addition.
+
+Use brackets when necessary:
+
+result = (3 + 5) * 2
+
+## 7. Assignment Operators
+- accumulate result of our calculations. 
+- Assignment operators update the value stored in a variable.
+
+score = 10
+score += 5     # same as score = score + 5
+score -= 2     # same as score = score - 2
+score *= 2     # same as score = score * 2
+score /= 2     # same as score = score / 2
+
+## 8. f-Strings
+
+- f-strings allow variables to be inserted directly into a string.
+- Different data tyeps are combined in a string using f-string. 
+
+eg 1:
+name = "Agrata"
+age = 34
+print(f"My name is {name} and I am {age} years old.")
+
+eg 2: 
+score=0
+height = 1.5
+is_winning=True
+print(f"Your Score = {score}, height = {height} and you are winning {is_winning}")
+
+## 9. round() 
+- it rounds off to the nearest whole number. 
+- give 2 arguments, round(value, ndigits) rounds a number to the specified number of decimal places. 
+
+    round(3.14159, 2)   # 3.14
+    round(3.14159, 3)   # 3.142
+    round(5.6)          # 6
+
+## 10. Mistakes I Made
+
+- used + sign in print function for variable whereas in Python we use comma, + is for concatenation. 
+
+## 11. Important Things to Remember
+
+- The method of pulling out a particular element from a string is called subscripting.
+- Python also has negative indices. -1 refers to the last character in the string.
+- Number system also works in Python, but instead of commas we can use underscore.
+- Type Error: if we mismatch data types. eg: len() function takes string as argument. If we give len() argument integer, it will give a Type Error.
+- len() function gives int as output.
+- Value Error comes if we give invalid literal.
+- input() always returns a STRING.
+- Implicit Type Casting: Python is implicitly converting the result. Division always give float as an answer. 
+- Python follows mathematical order of operations PEMDAS. Same priority will then occur from left to right. 
+- Type convert any float to int, give floor value. 
+- int() does not perform floor rounding. It removes the decimal portion (truncates toward zero).
+    int(5.9)    # 5
+    int(5.1)    # 5
+    int(-5.9)   # -5
+
+## 12. Practice Problems
+
+### Problem 1: BMI Calculator 
+height=float(input("enter height in m"))
+weight=float(input("Enter Weight in Kg"))
+bmi=weight/(height**2)
+print("BMI=",round(bmi,2))
+
+## 13. Mini Project: Tip Calculator 
+
+What I built:
+
+print("Welcome to the Tip Calculator")
+bill= float(input("What was the total bill?"))
+tip=float(input("How much tip you would like to give?"))
+number_of_people= int(input("How many people to split bill?"))
+# if tip == 12:
+#     print("Each person should pay=",round(bill*1.12/number_of_people,2))
+# elif tip == 15:
+#     print("Each person should pay=",round(bill*1.15/number_of_people,2))
+# elif tip == 20: 
+#     print("Each person should pay=",round(bill*1.2/number_of_people,2))
+# else: 
+#     print("No tip. Each person should pay=",round(bill/number_of_people,2))
+total_bill= bill + (tip / 100 * bill)
+share_per_person = round(total_bill/ number_of_people,2)
+print("Total Bill = ", round(total_bill,2))
+print(f"Each person should pay {share_per_person}")
+
+
+What concepts I used:
+- if else 
+- type conversion float 
+- round 
+- percentage 
+- f-string

@@ -1,0 +1,98 @@
+# Python Day 1
+
+## 1. print()
+
+print() is used to display something on the screen.
+
+Example:
+
+print("Hello World")
+in Pycharm: when you run the code it says code run with exit code 0, meaning without any issues.
+
+The color in the VS code or any other python editor which tells about errors etc is called "Syntax Highlighting". 
+
+String Manipulation: 
+
+\n to print in new line. 
+eg: print("Bread Receipe:\n1. Mix 500g of Flour, 10g of Yeast and 300ml Water in a bowl.\n2. Knead the dough for 10 minutes.") 
+
+String Concatenation:
+
+use + sign
+eg: print("Hello"+" "+"Birvansh")
+
+## 2. input()
+
+Syntax: input("Prompt for the user")
+eg: input("What is your name?")
+
+Using concatenation on print() and input():
+eg: print("Hello"+" "+input("What is your name?")+"!")
+
+## 3. Variables
+
+- A variable stores information.
+- Makes code readable. 
+- Cannot start with a number. 
+- Name Error occurs if variables name dont match in code.
+
+Example:
+
+name = input("What is your name?")
+age = input("What is your age?")
+print(name+" "+age)
+
+## 4. len() 
+To calculate the length of string in Python. 
+
+len() returns the number of items/characters in an object that has a length.
+    len("Agrata") → 6
+    len([1, 2, 3]) → 3
+    len(123) → TypeError
+
+eg:
+print(len(input("What is your name?")))
+
+
+## 5. Important points
+
+- Python is case-sensitive.
+- Text is written inside quotes.
+- Numbers don't need quotes.
+
+- spaces are very important in Python. 
+eg: An Indentation Error will occur if print function doesnt start from left corner. In Pycharm it says Process completed with exit code 1, Indentation Error. 
+
+- Commenting in Python using # or cmd+/ shortcut in Mac or Ctrl+/ in Windows
+
+## 6. Practice
+
+Write a program that prints:
+- My name
+- My age
+- My career goal
+
+## 7. Project for today 
+
+- Use print function to display cake receipe (using \n for different lines)
+- debugging exercise  
+- Band Name Generator program - to help come up with different names of a music band 
+
+print("Welcome to the Band Name Generator")
+city=input("What's the name of the city you grew up in?\n")
+pet=input("What's your pet's name?\n")
+print("Your band name could be"+" "+city+" "+pet)
+
+## 8. What I learned about coding
+
+- Syntax highlighting makes code easier to read.
+- Python is case-sensitive.
+- A variable stores a value.
+- input() gets information from the user.
+- input() returns the user's answer as a string.
+- len() gives the number of characters in a string.
+- + can be used to concatenate strings.
+- \n creates a new line.
+- # is used for comments.
+- Python uses indentation to organize blocks of code.
+- Types of errors: Name Error, Indentation Error and Syntax Error
