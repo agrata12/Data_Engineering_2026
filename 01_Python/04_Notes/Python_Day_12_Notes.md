@@ -86,6 +86,15 @@ def check_even_odd(number):
 
 Return `"Even"` if the number is even, otherwise `"Odd"`.
 
+
+def even_odd(num):
+    if num%2==0:
+        return "even"
+    else:
+        return "odd"
+n=int(input("Enter number to check even or odd: "))
+print(even_odd(n))
+
 ---
 
 ### Practice 2 — Maximum of Two Numbers
@@ -98,6 +107,14 @@ def find_max(a, b):
 ```
 
 Return the larger number.
+
+
+
+def find_max(num1,num2):
+    return max(num1,num2)
+n1=int(input("Enter first number: "))
+n2=int(input("Enter second number: "))
+print(f"Max number is: {find_max(n1,n2)}")
 
 ---
 
@@ -116,6 +133,21 @@ countdown(5)
 2
 1
 ```
+
+<!-- # def countdown(num):
+#     for i in range(num,0,-1):
+#         print (i)
+# n=int(input("Enter countdown number: "))
+# countdown(n) -->
+
+def countdown(n): #countdown using recurssion
+    if n == 0:
+        return
+    print(n)
+    countdown(n - 1)
+
+countdown(10)
+
 
 ---
 
@@ -175,6 +207,7 @@ The player keeps guessing until:
 
 * The correct number is guessed
 * Attempts run out
+
 
 ### Game Flow
 
@@ -239,15 +272,7 @@ while attempts > 0:
 12. `%` checks the remainder.
 13. `number % i == 0` → number is completely divisible by `i`.
 14. Day 12 combines **scope + functions + loops + conditions + randomisation + user input**.
+15. Namespace: A space/place where Python stores names and keeps track of what objects they refer to.
 
-## 🧠 Main Lesson
-
-```text
-Variables → Scope
-Functions → Local variables + parameters + return
-Loops → Repetition
-Conditions → Decision making
-Random → Random numbers
-```
-
-Together, these concepts allow you to build complete programs like the **Number Guessing Game**.
+    Variables created outside functions → global namespace
+    Variables created inside functions → local namespace
